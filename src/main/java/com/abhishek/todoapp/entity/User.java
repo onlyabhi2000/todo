@@ -24,5 +24,8 @@ public class User {
 	@OneToMany
 	private List<Todo> todoList = new ArrayList<>();
 	
+//	@OneToMany
+//	private  List<Tags> tagList = new ArrayList<>();
+	
 
 }

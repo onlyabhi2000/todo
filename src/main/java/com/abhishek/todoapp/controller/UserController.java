@@ -13,6 +13,7 @@ import org.springframework.web.bind.annotation.RestController;
 
 import com.abhishek.todoapp.entity.Todo;
 import com.abhishek.todoapp.entity.User;
+import com.abhishek.todoapp.repository.TagRepository;
 import com.abhishek.todoapp.repository.ToDoRepository;
 import com.abhishek.todoapp.repository.UserRepository;
 import com.abhishek.todoapp.request.AddTodoRequest;
@@ -27,7 +28,14 @@ public class UserController {
 	 private UserRepository userRepository;
 	    
 	    private ToDoRepository todoRepository;
-	
+	    
+//	    public UserController(TagRepository tagRepository) {
+//			super();
+//			this.tagRepository = tagRepository;
+//		}
+//
+//		private TagRepository tagRepository;
+//	
 	
 	public UserController(UserRepository userRepository, ToDoRepository todoRepository) {
 		super();
@@ -55,7 +63,7 @@ public class UserController {
 	        Todo todo = new Todo();
 	        todo.setContent(todoRequest.getContent());
 	        todo.setTitle(todoRequest.getTitle());
-	       	        user.getTodoList().add(todo);
+	       	user.getTodoList().add(todo);
 	        userRepository.save(user);
 	    }
 
